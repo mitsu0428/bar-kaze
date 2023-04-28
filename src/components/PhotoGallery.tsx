@@ -1,53 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Image from "next/image";
 
 const PortfolioComponents = () => {
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleNextImage = () => {
+    setCurrentImageIndex(
+      currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
+    );
+  };
+
+  const handlePrevImage = () => {
+    setCurrentImageIndex(
+      currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
+    );
+  };
+
+  const images = [
+    { src: "/images/IMG_6475.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    { src: "/images/IMG_6477.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    { src: "/images/IMG_6891.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    { src: "/images/IMG_6890.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    { src: "/images/IMG_6565.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    { src: "/images/IMG_6564.jpg", alt: "kaji-logo", width: 100, height: 100 },
+  ];
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <Container>
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6475.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6477.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6564.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
-
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6565.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6890.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
-      <SubContainer>
-        <ImageTag
-          layout="fill"
-          src="/images/IMG_6891.jpg"
-          alt="kaji-logo"
-        />
-      </SubContainer>
+      {isMobile ? (
+        <SlideShowContainer>
+          <ImageTag
+            src={images[currentImageIndex].src}
+            alt={images[currentImageIndex].alt}
+            width={images[currentImageIndex].width}
+            height={images[currentImageIndex].height}
+          />
+          <Button onClick={handlePrevImage}>{"<"}</Button>
+          <Button onClick={handleNextImage}>{">"}</Button>
+        </SlideShowContainer>
+      ) : (
+        images.map((image, index) => (
+          <SubContainer key={index}>
+            <ImageTag
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+            />
+          </SubContainer>
+        ))
+      )}
     </Container>
   );
 };
@@ -77,4 +93,29 @@ const SubContainer = styled.div`
   margin-top: 32px;
   margin-left: 16px;
   margin-right: 16px;
+`;
+
+const SlideShowContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 300px;
+`;
+
+const Button = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  &:first-of-type {
+    left: 0;
+  }
+  &:last-of-type {
+    right: 0;
+  }
 `;
