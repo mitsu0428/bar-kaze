@@ -14,9 +14,7 @@ export default function Home() {
         <Hr />
         <Container>
           <SubTitle>Concept</SubTitle>
-          <Text>
-            スタンダードな飲み方に季節のフルーツを加えた遊び心のあるカクテルも味わえます。
-          </Text>
+          <Text>正統派ウイスキーから個性的なカクテルまで。</Text>
         </Container>
         <Container>
           <SnsShare />

@@ -19,12 +19,42 @@ const PortfolioComponents = () => {
   };
 
   const images = [
-    { src: "/images/IMG_6475.jpg", alt: "kaji-logo", width: 100, height: 100 },
-    { src: "/images/IMG_6477.jpg", alt: "kaji-logo", width: 100, height: 100 },
-    { src: "/images/IMG_6891.jpg", alt: "kaji-logo", width: 100, height: 100 },
-    { src: "/images/IMG_6890.jpg", alt: "kaji-logo", width: 100, height: 100 },
-    { src: "/images/IMG_6565.jpg", alt: "kaji-logo", width: 100, height: 100 },
-    { src: "/images/IMG_6564.jpg", alt: "kaji-logo", width: 100, height: 100 },
+    {
+      src: "/images/IMG_6475.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
+    {
+      src: "/images/IMG_6477.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
+    {
+      src: "/images/IMG_6891.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
+    {
+      src: "/images/IMG_6890.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
+    {
+      src: "/images/IMG_6565.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
+    {
+      src: "/images/IMG_6564.jpg",
+      alt: "bar-kaze-maruyamacho",
+      width: 900,
+      height: 900,
+    },
   ];
 
   React.useEffect(() => {
@@ -103,19 +133,17 @@ const SlideShowContainer = styled.div`
 
 const Button = styled.button`
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
   border: none;
   padding: 8px;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
   cursor: pointer;
   &:first-of-type {
     left: 0;
+    border-radius: 0 8px 8px 0;
   }
   &:last-of-type {
     right: 0;
+    border-radius: 8px 0 0 8px;
   }
 `;
