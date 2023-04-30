@@ -16,8 +16,8 @@ function ThirdView({ isPc }: Props) {
           <CustomImage
             src="/images/third_view.jpg"
             alt="third view"
-            width={1440}
-            height={900}
+            width={1200}
+            height={750}
           />
         </CustomImageContainer>
       )}
@@ -58,12 +58,14 @@ export default ThirdView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   display: flex;
   flex-direction: column;
   position: relative;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomImageContainer = styled.div`
@@ -104,18 +106,19 @@ const CustomSubTitle = styled.h2`
 
 const CustomText = styled.p`
   position: relative;
-  font-size: 44px;
+  font-size: 36px;
   text-align: left;
+  margin-left: 64px;
+`;
+
+const CustomCenterText = styled.p`
+  position: relative;
+  font-size: 36px;
+  text-align: center;
 `;
 
 const CustomTextSp = styled.p`
   position: relative;
   font-size: 16px;
-  text-align: center;
-`;
-
-const CustomCenterText = styled.p`
-  position: relative;
-  font-size: 44px;
   text-align: center;
 `;

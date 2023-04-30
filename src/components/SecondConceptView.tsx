@@ -21,20 +21,20 @@ export default SecondConceptView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
-  padding: 32px;
   position: relative;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomText = styled.p`
-  font-size: 1rem;
+  font-size: 36px;
   text-align: right;
+  margin-right: 16px;
   margin-bottom: 16px;
-  max-width: 600px;
 
-  @media (min-width: 768px) {
-    font-size: 1.5rem;
-    text-align: right;
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;

@@ -56,13 +56,13 @@ export default InstagramView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
-  padding: 32px;
   display: flex;
   flex-direction: column;
   position: relative;
-
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
   @media (max-width: 768px) {
     height: auto;
   }

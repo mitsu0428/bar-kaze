@@ -27,18 +27,20 @@ export default InformationView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomText = styled.p`
-  font-size: 44px;
+  font-size: 36px;
   text-align: left;
 
   @media (max-width: 768px) {

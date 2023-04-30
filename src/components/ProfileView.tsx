@@ -26,15 +26,16 @@ export default ProfileView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
-  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomImage = styled(Image)`

@@ -27,8 +27,8 @@ function TopView({ isPc }: Props) {
         <CustomImage
           src="/images/first_view.jpg"
           alt="top view"
-          width={1440}
-          height={900}
+          width={1200}
+          height={750}
         />
       )}
       {!isPc && (
@@ -50,7 +50,8 @@ const Container = styled.div<{ isPc: boolean }>`
   ${(props) => props.isPc && "height: 100vh;"}
   ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
-  padding: 8px;
+  padding: 32px;
+  margin-top: 64px;
 `;
 
 const CustomTextArea = styled.div`

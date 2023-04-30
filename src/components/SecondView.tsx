@@ -13,8 +13,8 @@ function SecondView({ isPc }: Props) {
         <CustomImage
           src="/images/second_view.jpg"
           alt="second view"
-          width={1440}
-          height={900}
+          width={1200}
+          height={750}
         />
       )}
       {isPc && <VerticalText>Concepts</VerticalText>}
@@ -35,16 +35,17 @@ export default SecondView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
+  position: relative;
   ${(props) => props.isPc && "height: 100vh;"}
   ${(props) => !props.isPc && "height: 50vh;"}
-  padding: 32px;
-  position: relative;
+  ${(props) => props.isPc && "margin-top: 128px;"}
+  ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomImage = styled(Image)`
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   z-index: -1;
 `;
 
