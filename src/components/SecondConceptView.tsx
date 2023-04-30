@@ -31,8 +31,8 @@ const Container = styled.div<{ isPc: boolean }>`
 const CustomText = styled.p`
   font-size: 36px;
   text-align: right;
-  margin-right: 16px;
-  margin-bottom: 16px;
+  margin-right: 32px;
+  padding: 16px;
 
   @media (max-width: 768px) {
     font-size: 20px;

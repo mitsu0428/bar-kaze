@@ -83,6 +83,7 @@ const CustomSubTitle = styled.h2`
   font-size: 100px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
+  margin-left: 32px;
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -109,6 +110,7 @@ const CustomImage = styled(Image)`
 const CustomText = styled.p`
   font-size: 36px;
   text-align: left;
+  margin-left: 32px;
 
   @media (max-width: 768px) {
     font-size: 20px;

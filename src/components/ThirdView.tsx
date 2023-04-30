@@ -98,6 +98,7 @@ const CustomSubTitle = styled.h2`
   font-size: 100px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
+  margin-left: 32px;
 
   @media (max-width: 768px) {
     font-size: 50px;
@@ -109,18 +110,21 @@ const CustomText = styled.p`
   font-size: 36px;
   text-align: left;
   margin-left: 64px;
+  padding: 16px;
 `;
 
 const CustomCenterText = styled.p`
   position: relative;
   font-size: 36px;
   text-align: center;
+  margin-top: 32px;
 `;
 
 const CustomTextSp = styled.p`
   position: relative;
   font-size: 16px;
   text-align: center;
+  padding: 16px;
 `;
 
 const Hr = styled.hr`
