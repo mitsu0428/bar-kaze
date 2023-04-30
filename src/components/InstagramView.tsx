@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 
 type Props = {
   isPc: boolean;
@@ -10,6 +12,15 @@ function InstagramView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
       <CustomSubTitle>Instagram</CustomSubTitle>
+      <CustomText>
+        <Link
+          href="https://www.instagram.com/barkaze_maruyamacho/"
+          target="_blank"
+        >
+          <FaInstagram size={isPc ? 64 : 32} />
+        </Link>
+      </CustomText>
+      <Hr />
       <ImageMatrix>
         <CustomImage
           src="/images/Instagram/IMG_6474.jpg"
@@ -93,4 +104,26 @@ const ImageMatrix = styled.div`
 
 const CustomImage = styled(Image)`
   margin-top: 16px;
+`;
+
+const CustomText = styled.p`
+  font-size: 36px;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+`;
+
+const Hr = styled.hr`
+  margin-top: 32px;
+  border-width: 0 0 1px;
+  border-image: linear-gradient(
+      90deg,
+      hsla(0, 0%, 35%, 0),
+      hsla(0, 0%, 35%, 0.5) 50%,
+      hsla(0, 0%, 35%, 0) 100%
+    )
+    0 0 100%;
+  border-style: solid;
 `;
