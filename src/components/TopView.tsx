@@ -57,7 +57,7 @@ const Container = styled.div<{ isPc: boolean }>`
 const CustomTextArea = styled.div`
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 30%;
   transform: translate(-50%, -50%);
 `;
 
