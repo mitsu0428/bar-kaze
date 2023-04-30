@@ -22,11 +22,11 @@ function ThirdView({ isPc }: Props) {
           <CustomText>当店では空間を活用して</CustomText>
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
-          <CustomCenterText>
+          <CustomText>
             <Link href="mailto: bar.kaze.prj@gmail.com">
               ▶︎ bar.kaze.prj@gmail.com
             </Link>
-          </CustomCenterText>
+          </CustomText>
         </CustomImageContainer>
       )}
       {!isPc && (
@@ -113,13 +113,6 @@ const CustomText = styled.p`
     font-size: 16px;
     margin-left: 32px;
   }
-`;
-
-const CustomCenterText = styled.p`
-  position: relative;
-  font-size: 36px;
-  text-align: center;
-  margin-top: 32px;
 `;
 
 const CustomTextSp = styled.p`
