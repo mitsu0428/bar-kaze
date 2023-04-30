@@ -14,7 +14,7 @@ export default function Home() {
   const [isPc, setIsPc] = React.useState(false);
 
   React.useEffect(() => {
-    const isPc = window.matchMedia("(min-width: 768px)").matches;
+    const isPc = window.matchMedia("(min-width: 769px)").matches;
     setIsPc(isPc);
   }, []);
 

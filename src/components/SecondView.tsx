@@ -57,12 +57,13 @@ const CustomImageSp = styled(Image)`
 `;
 
 const CustomSubTitle = styled.h2`
-  font-size: 100px;
+  font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
+  margin-left: 32px;
 
   @media (max-width: 768px) {
-    font-size: 50px;
+    font-size: 36px;
   }
 `;
 
@@ -74,7 +75,7 @@ const VerticalText = styled.h2`
   margin-right: 32px;
   writing-mode: vertical-lr;
   text-align: center;
-  font-size: 100px;
+  font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
   white-space: nowrap;

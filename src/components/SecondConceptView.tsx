@@ -24,17 +24,17 @@ const Container = styled.div<{ isPc: boolean }>`
   position: relative;
   ${(props) => props.isPc && "height: 100vh;"}
   ${(props) => props.isPc && "margin-top: 128px;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => !props.isPc && "height: 80vh;"}
   ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
 
 const CustomText = styled.p`
-  font-size: 36px;
+  font-size: 32px;
   text-align: right;
   margin-right: 32px;
   padding: 16px;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;

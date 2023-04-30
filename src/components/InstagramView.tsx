@@ -80,13 +80,13 @@ const Container = styled.div<{ isPc: boolean }>`
 `;
 
 const CustomSubTitle = styled.h2`
-  font-size: 100px;
+  font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
   margin-left: 32px;
 
   @media (max-width: 768px) {
-    font-size: 50px;
+    font-size: 36px;
   }
 `;
 

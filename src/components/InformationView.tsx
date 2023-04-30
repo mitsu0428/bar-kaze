@@ -40,10 +40,10 @@ const Container = styled.div<{ isPc: boolean }>`
 `;
 
 const CustomText = styled.p`
-  font-size: 36px;
+  font-size: 32px;
   text-align: left;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;

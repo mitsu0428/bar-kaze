@@ -31,12 +31,12 @@ const CustomFooter = styled.footer`
   background-color: #000;
   color: #fff;
   text-align: center;
-  font-size: 44px;
+  font-size: 32px;
   bottom: 0;
   left: 0;
   z-index: 100;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;

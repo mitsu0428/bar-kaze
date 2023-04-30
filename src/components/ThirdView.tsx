@@ -19,6 +19,14 @@ function ThirdView({ isPc }: Props) {
             width={1200}
             height={750}
           />
+          <CustomText>当店では空間を活用して</CustomText>
+          <CustomText>イベント等を行っていただくことも可能です。</CustomText>
+          <CustomText>メールまたはDMにてご相談ください。</CustomText>
+          <CustomCenterText>
+            <Link href="mailto: bar.kaze.prj@gmail.com">
+              ▶︎ bar.kaze.prj@gmail.com
+            </Link>
+          </CustomCenterText>
         </CustomImageContainer>
       )}
       {!isPc && (
@@ -29,23 +37,6 @@ function ThirdView({ isPc }: Props) {
             width={360}
             height={225}
           />
-        </CustomImageContainerSp>
-      )}
-
-      {isPc && (
-        <>
-          <CustomText>当店では空間を活用して</CustomText>
-          <CustomText>イベント等を行っていただくことも可能です。</CustomText>
-          <CustomText>メールまたはDMにてご相談ください。</CustomText>
-          <CustomCenterText>
-            <Link href="mailto: bar.kaze.prj@gmail.com">
-              ▶︎ bar.kaze.prj@gmail.com
-            </Link>
-          </CustomCenterText>
-        </>
-      )}
-      {!isPc && (
-        <>
           <CustomTextSp>当店では空間を活用して</CustomTextSp>
           <CustomTextSp>
             イベント等を行っていただくことも可能です。
@@ -56,7 +47,7 @@ function ThirdView({ isPc }: Props) {
               ▶︎ bar.kaze.prj@gmail.com
             </Link>
           </CustomTextSp>
-        </>
+        </CustomImageContainerSp>
       )}
     </Container>
   );
@@ -69,9 +60,8 @@ const Container = styled.div<{ isPc: boolean }>`
   position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => !props.isPc && "height: 80vh;"}
   ${(props) => props.isPc && "margin-top: 128px;"}
   ${(props) => !props.isPc && "margin-top: 64px;"}
 `;
@@ -83,7 +73,7 @@ const CustomImageContainer = styled.div`
 `;
 
 const CustomImageContainerSp = styled.div`
-  display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
 `;
@@ -96,29 +86,33 @@ const CustomImage = styled(Image)`
 `;
 
 const CustomImageSp = styled(Image)`
-  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 `;
 
 const CustomSubTitle = styled.h2`
-  font-size: 100px;
+  font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
   margin-left: 32px;
 
   @media (max-width: 768px) {
-    font-size: 50px;
+    font-size: 36px;
   }
 `;
 
 const CustomText = styled.p`
   position: relative;
-  font-size: 36px;
+  font-size: 32px;
   text-align: left;
   margin-left: 64px;
   padding: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    margin-left: 32px;
+  }
 `;
 
 const CustomCenterText = styled.p`
@@ -129,21 +123,7 @@ const CustomCenterText = styled.p`
 `;
 
 const CustomTextSp = styled.p`
-  position: relative;
   font-size: 16px;
   text-align: center;
   padding: 16px;
-`;
-
-const Hr = styled.hr`
-  margin-top: 32px;
-  border-width: 0 0 1px;
-  border-image: linear-gradient(
-      90deg,
-      hsla(0, 0%, 35%, 0),
-      hsla(0, 0%, 35%, 0.5) 50%,
-      hsla(0, 0%, 35%, 0) 100%
-    )
-    0 0 100%;
-  border-style: solid;
 `;

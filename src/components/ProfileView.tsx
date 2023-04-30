@@ -45,10 +45,10 @@ const CustomImage = styled(Image)`
 `;
 
 const CustomText = styled.p`
-  font-size: 44px;
+  font-size: 32px;
   text-align: cemter;
 
   @media (max-width: 768px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 `;
