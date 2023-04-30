@@ -96,6 +96,10 @@ const CustomSubTitle = styled.h2`
   font-size: 100px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+  }
 `;
 
 const CustomText = styled.p`
