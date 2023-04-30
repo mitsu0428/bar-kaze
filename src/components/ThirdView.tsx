@@ -37,7 +37,11 @@ function ThirdView({ isPc }: Props) {
           <CustomText>当店では空間を活用して</CustomText>
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
-          <CustomCenterText>▶︎ bar.kaze.prj@gmail.com</CustomCenterText>
+          <CustomCenterText>
+            <Link href="mailto: bar.kaze.prj@gmail.com">
+              ▶︎ bar.kaze.prj@gmail.com
+            </Link>
+          </CustomCenterText>
         </>
       )}
       {!isPc && (
@@ -47,7 +51,11 @@ function ThirdView({ isPc }: Props) {
             イベント等を行っていただくことも可能です。
           </CustomTextSp>
           <CustomTextSp>メールまたはDMにてご相談ください。</CustomTextSp>
-          <CustomTextSp>▶︎ bar.kaze.prj@gmail.com</CustomTextSp>
+          <CustomTextSp>
+            <Link href="mailto: bar.kaze.prj@gmail.com">
+              ▶︎ bar.kaze.prj@gmail.com
+            </Link>
+          </CustomTextSp>
         </>
       )}
     </Container>
