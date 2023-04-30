@@ -7,7 +7,7 @@ type Props = {
 
 function SecondConceptView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       <CustomText>外にいる時にふと感じる心地よい風</CustomText>
       <CustomText>生活していると、追い風が吹くこともあれば</CustomText>
       <CustomText>向かい風が吹くこともある</CustomText>
@@ -19,9 +19,10 @@ function SecondConceptView({ isPc }: Props) {
 
 export default SecondConceptView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   padding: 32px;
   position: relative;
 `;

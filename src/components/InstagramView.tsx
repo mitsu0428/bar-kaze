@@ -8,7 +8,7 @@ type Props = {
 
 function InstagramView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       <CustomSubTitle>Instagram</CustomSubTitle>
       <ImageMatrix>
         <CustomImage
@@ -36,13 +36,13 @@ function InstagramView({ isPc }: Props) {
           height={isPc ? 350 : 175}
         />
         <CustomImage
-          src="/images/Instagram/IMG_6564.jpg"
+          src="/images/Instagram/IMG_6564.JPG"
           alt="instagram"
           width={isPc ? 350 : 175}
           height={isPc ? 350 : 175}
         />
         <CustomImage
-          src="/images/Instagram/IMG_6565.jpg"
+          src="/images/Instagram/IMG_6565.JPG"
           alt="instagram"
           width={isPc ? 350 : 175}
           height={isPc ? 350 : 175}
@@ -54,10 +54,10 @@ function InstagramView({ isPc }: Props) {
 
 export default InstagramView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
-
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   padding: 32px;
   display: flex;
   flex-direction: column;

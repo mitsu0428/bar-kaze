@@ -8,7 +8,7 @@ type Props = {
 
 function SecondView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       {isPc && (
         <CustomImage
           src="/images/second_view.jpg"
@@ -33,9 +33,10 @@ function SecondView({ isPc }: Props) {
 
 export default SecondView;
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+const Container = styled.div<{ isPc: boolean }>`
+  width: 100%;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   padding: 32px;
   position: relative;
 `;

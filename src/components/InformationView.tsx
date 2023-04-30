@@ -7,7 +7,7 @@ type Props = {
 
 function InformationView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       {isPc ? (
         <>
           <CustomText>OPEN 20:00 - 5:00</CustomText>
@@ -25,9 +25,10 @@ function InformationView({ isPc }: Props) {
 
 export default InformationView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   display: flex;
   flex-direction: column;

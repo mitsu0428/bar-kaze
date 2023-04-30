@@ -9,7 +9,7 @@ type Props = {
 
 function ThirdView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       <CustomSubTitle>Events</CustomSubTitle>
       {isPc && (
         <CustomImageContainer>
@@ -56,9 +56,10 @@ function ThirdView({ isPc }: Props) {
 
 export default ThirdView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   display: flex;
   flex-direction: column;
@@ -105,7 +106,7 @@ const CustomText = styled.p`
 
 const CustomTextSp = styled.p`
   position: relative;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
 `;
 

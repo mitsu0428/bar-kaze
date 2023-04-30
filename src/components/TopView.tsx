@@ -8,7 +8,7 @@ type Props = {
 
 function TopView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       {isPc && (
         <CustomTextArea>
           <CustomSubTitle>bar</CustomSubTitle>
@@ -45,9 +45,11 @@ function TopView({ isPc }: Props) {
 
 export default TopView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
+  position: relative;
   padding: 8px;
 `;
 

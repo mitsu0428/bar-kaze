@@ -8,7 +8,7 @@ type Props = {
 
 function ProfileView({ isPc }: Props) {
   return (
-    <Container>
+    <Container isPc={isPc}>
       <CustomImage
         src="/images/kaze_ロゴ.png"
         alt="bar kaze logo"
@@ -24,9 +24,10 @@ function ProfileView({ isPc }: Props) {
 
 export default ProfileView;
 
-const Container = styled.div`
+const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: 100vh;
+  ${(props) => props.isPc && "height: 100vh;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   padding: 32px;
   display: flex;
