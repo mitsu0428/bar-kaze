@@ -35,6 +35,6 @@ const CustomText = styled.p`
   padding: 16px;
 
   @media (max-width: 768px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
