@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Head from "next/head";
 import FooterView from "@/components/FooterView";
 import InformationView from "@/components/InformationView";
 import InstagramView from "@/components/InstagramView";
@@ -9,6 +8,7 @@ import SecondConceptView from "@/components/SecondConceptView";
 import SecondView from "@/components/SecondView";
 import ThirdView from "@/components/ThirdView";
 import TopView from "@/components/TopView";
+import SeoSettings from "@/components/libs/SeoSettings";
 
 export default function Home() {
   const [isPc, setIsPc] = React.useState(false);
@@ -20,12 +20,7 @@ export default function Home() {
 
   return (
     <Main>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1.0,user-scalable=no"
-        />
-      </Head>
+      <SeoSettings />
       <TopView isPc={isPc} />
       <SecondView isPc={isPc} />
       <SecondConceptView isPc={isPc} />
