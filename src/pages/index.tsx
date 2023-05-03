@@ -20,7 +20,16 @@ export default function Home() {
 
   return (
     <Main>
-      <SeoSettings />
+      <SeoSettings
+        pageTitle={"bar kaze -円山町 | bar kaze maruyamacho"}
+        pageDescription={
+          "【渋谷駅から徒歩5分】円山町エリアにあるbar kazeの公式サイト。正統派ウイスキーから個性的なカクテルまでその時の気分に応じたお酒を楽しめます。"
+        }
+        pagePath={"https://bar-kaze.net"}
+        pageImg={"https://bar-kaze.net"}
+        pageImgWidth={1280}
+        pageImgHeight={960}
+      />
       <TopView isPc={isPc} />
       <SecondView isPc={isPc} />
       <SecondConceptView isPc={isPc} />
