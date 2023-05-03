@@ -20,8 +20,14 @@ function SecondConceptView({ isPc }: Props) {
 export default SecondConceptView;
 
 const Container = styled.div<{ isPc: boolean }>`
-  width: 100%;
+  display: flex;
   position: relative;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+
   ${(props) => props.isPc && "height: 100vh;"}
   ${(props) => props.isPc && "margin-top: 128px;"}
   ${(props) => !props.isPc && "height: 80vh;"}
@@ -32,9 +38,10 @@ const CustomText = styled.p`
   font-size: 32px;
   text-align: right;
   margin-right: 32px;
-  padding: 16px;
+  padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;
+    margin-right: 16px;
   }
 `;

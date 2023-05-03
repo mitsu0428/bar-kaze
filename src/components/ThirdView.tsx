@@ -37,16 +37,14 @@ function ThirdView({ isPc }: Props) {
             width={360}
             height={225}
           />
-          <CustomTextSp>当店では空間を活用して</CustomTextSp>
-          <CustomTextSp>
-            イベント等を行っていただくことも可能です。
-          </CustomTextSp>
-          <CustomTextSp>メールまたはDMにてご相談ください。</CustomTextSp>
-          <CustomTextSp>
+          <CustomText>当店では空間を活用して</CustomText>
+          <CustomText>イベント等を行っていただくことも可能です。</CustomText>
+          <CustomText>メールまたはDMにてご相談ください。</CustomText>
+          <CustomText>
             <Link href="mailto: bar.kaze.prj@gmail.com">
               ▶︎ bar.kaze.prj@gmail.com
             </Link>
-          </CustomTextSp>
+          </CustomText>
         </CustomImageContainerSp>
       )}
     </Container>
@@ -107,16 +105,11 @@ const CustomText = styled.p`
   font-size: 32px;
   text-align: left;
   margin-left: 64px;
-  padding: 16px;
+  padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    margin-left: 32px;
+    text-align: center;
+    margin-left: 16px;
   }
-`;
-
-const CustomTextSp = styled.p`
-  font-size: 16px;
-  text-align: center;
-  padding: 16px;
 `;
