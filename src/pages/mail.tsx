@@ -71,7 +71,7 @@ export default function Mail() {
         </BasicSubContainer>
         <BasicSubContainer>
           <ContactTextArea
-            placeholder="お問い合わせ内容&#13; 例）イベント会場として使用したいです。"
+            placeholder="お問い合わせ&#13; 例）イベント会場として使用したいです。"
             onChange={(e) => setMessage(e.target.value)}
           />
         </BasicSubContainer>
@@ -92,7 +92,7 @@ const BasicContainer = styled.div`
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 8px;
+  padding: 16px;
 `;
 
 const BasicSubContainer = styled(BasicContainer)``;
