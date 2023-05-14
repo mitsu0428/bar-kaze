@@ -38,6 +38,7 @@ function ThirdView({ isPc }: Props) {
           <CustomText>当店では空間を活用して</CustomText>
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
+
           <Link href="/mail">
             <BasicButton>お問い合わせはこちら</BasicButton>
           </Link>
@@ -129,5 +130,8 @@ const BasicButton = styled.button`
   cursor: pointer;
   :hover {
     background-color: #cc5757;
+  }
+  @media (max-width: 768px) {
+    margin-left: 16px;
   }
 `;
