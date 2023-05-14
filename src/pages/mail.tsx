@@ -103,7 +103,7 @@ const ContactContainer = styled.div`
   margin: 2rem auto;
   padding: 2rem;
   border: 1px solid #fff;
-  border-radius: 4px;
+  border-radius: 8px;
 `;
 
 const ContactSubTitle = styled.h2`
