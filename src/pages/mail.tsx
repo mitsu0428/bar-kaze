@@ -1,38 +1,43 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { useToast } from "@/components/hooks/useToast";
 
 export default function Mail() {
-  const [name, setName] = useState("");
-  const [mail, setMail] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = React.useState("");
+  const [mail, setMail] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
-  // 指定秒を待機する関数
+  const toast = useToast();
+
   const _sleep = (ms: number) =>
     new Promise((resolve) => setTimeout(resolve, ms));
-  // メール送信関数
+
   const sendMail = async () => {
-    // 名前が入力されているか
     if (name == "") {
-      alert("名前を入力してください！");
+      toast({ text: "名前を入力してください。", type: "error" });
       return;
     }
-    // メールアドレスが入力されているかと正しいフォーマットか
+
     if (mail == "") {
-      alert("メールアドレスを入力してください。");
-      return;
-    } else if (mail.indexOf("@") == -1) {
-      alert("有効なメールアドレスを入力してください。");
+      toast({ text: "メールアドレスを入力してください。", type: "error" });
       return;
     }
-    // 内容が入力されているか
+
+    if (mail.indexOf("@") == -1) {
+      toast({
+        text: "有効なメールアドレスを入力してください。",
+        type: "error",
+      });
+      return;
+    }
+
     if (message == "") {
-      alert("内容を入力してください。");
+      toast({ text: "内容を入力してください。", type: "error" });
       return;
     }
     await _sleep(1000);
-    alert("お問い合わせを送信しました。");
     await fetch("/api/mail", {
       method: "POST",
       body: `\n
@@ -40,8 +45,11 @@ export default function Mail() {
       メールアドレス: ${mail} \n
       お問い合わせ内容: \n${message} `,
     });
-    // 値は保持されているのでリロードしてOK
-    location.reload();
+
+    toast({
+      text: "メッセージを送信しました。",
+      type: "normal",
+    });
   };
 
   return (
@@ -78,7 +86,9 @@ export default function Mail() {
         <BasicSubContainer>
           <BasicButton
             type="button"
-            onClick={sendMail}
+            onClick={() => {
+              sendMail();
+            }}
           >
             送信
           </BasicButton>
