@@ -2,14 +2,18 @@ import React, { useState, createContext, useContext, useEffect } from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 
-type ToastTypes = "normal" | "error";
+type ToastTypes = "normal" | "error" | "";
 
 type ToastProviderProps = {
   children: React.ReactNode;
 };
 
 const ToastContext = createContext(
-  {} as unknown as (props: { text: string; type?: ToastTypes }) => void
+  {} as unknown as (props: {
+    text: string;
+    type?: ToastTypes;
+    isDisplay?: boolean;
+  }) => void
 );
 
 ToastContext.displayName = "ToastContext";
@@ -26,13 +30,26 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
   const showToast = ({
     text,
     type = "normal",
+    isDisplay = true,
   }: {
     text: string;
     type?: ToastTypes;
+    isDisplay?: boolean;
   }) => {
     setToastText(text);
     setToastType(type);
-    setShowable(true);
+
+    if (isDisplay) {
+      setShowable(true);
+    }
+
+    if (!isDisplay) {
+      setShowable(false);
+    }
+
+    setTimeout(() => {
+      setShowable(false);
+    }, 3000);
   };
 
   useEffect(() => {

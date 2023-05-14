@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { useToast } from "@/components/hooks/useToast";
+import router from "next/router";
 
 export default function Mail() {
   const [name, setName] = React.useState("");
@@ -16,12 +17,20 @@ export default function Mail() {
 
   const sendMail = async () => {
     if (name == "") {
-      toast({ text: "名前を入力してください。", type: "error" });
+      toast({
+        text: "名前を入力してください。",
+        type: "error",
+        isDisplay: true,
+      });
       return;
     }
 
     if (mail == "") {
-      toast({ text: "メールアドレスを入力してください。", type: "error" });
+      toast({
+        text: "メールアドレスを入力してください。",
+        type: "error",
+        isDisplay: true,
+      });
       return;
     }
 
@@ -29,12 +38,17 @@ export default function Mail() {
       toast({
         text: "有効なメールアドレスを入力してください。",
         type: "error",
+        isDisplay: true,
       });
       return;
     }
 
     if (message == "") {
-      toast({ text: "内容を入力してください。", type: "error" });
+      toast({
+        text: "内容を入力してください。",
+        type: "error",
+        isDisplay: true,
+      });
       return;
     }
     await _sleep(1000);
@@ -49,8 +63,31 @@ export default function Mail() {
     toast({
       text: "メッセージを送信しました。",
       type: "normal",
+      isDisplay: true,
     });
   };
+
+  const hideToast = React.useCallback(() => {
+    toast({ text: "", type: "", isDisplay: false });
+  }, [toast]);
+
+  React.useEffect(() => {
+    const handleRouteChange = () => {
+      hideToast();
+    };
+
+    const handleBeforeUnload = () => {
+      hideToast();
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [hideToast]);
 
   return (
     <BasicContainer>
