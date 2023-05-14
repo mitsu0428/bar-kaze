@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import FooterView from "@/components/FooterView";
+import FooterView from "@/components/layout/FooterView";
 import InformationView from "@/components/InformationView";
 import InstagramView from "@/components/InstagramView";
 import ProfileView from "@/components/ProfileView";

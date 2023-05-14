@@ -22,11 +22,9 @@ function ThirdView({ isPc }: Props) {
           <CustomText>当店では空間を活用して</CustomText>
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
-          <CustomText>
-            <Link href="mailto: bar.kaze.prj@gmail.com">
-              ▶︎ bar.kaze.prj@gmail.com
-            </Link>
-          </CustomText>
+          <Link href="/mail">
+            <BasicButton>お問い合わせはこちら</BasicButton>
+          </Link>
         </CustomImageContainer>
       )}
       {!isPc && (
@@ -40,11 +38,9 @@ function ThirdView({ isPc }: Props) {
           <CustomText>当店では空間を活用して</CustomText>
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
-          <CustomText>
-            <Link href="mailto: bar.kaze.prj@gmail.com">
-              ▶︎ bar.kaze.prj@gmail.com
-            </Link>
-          </CustomText>
+          <Link href="/mail">
+            <BasicButton>お問い合わせはこちら</BasicButton>
+          </Link>
         </CustomImageContainerSp>
       )}
     </Container>
@@ -81,12 +77,14 @@ const CustomImage = styled(Image)`
   bottom: 0;
   right: 0;
   z-index: -1;
+  border-radius: 8px;
 `;
 
 const CustomImageSp = styled(Image)`
   top: 0;
   left: 0;
   z-index: -1;
+  border-radius: 8px;
 `;
 
 const CustomSubTitle = styled.h2`
@@ -102,14 +100,34 @@ const CustomSubTitle = styled.h2`
 
 const CustomText = styled.p`
   position: relative;
+  padding: 8px;
   font-size: 32px;
   text-align: left;
   margin-left: 64px;
-  padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     margin-left: 16px;
+  }
+`;
+
+const BasicButton = styled.button`
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem 0;
+  margin-left: 64px;
+  text-decoration: none;
+  color: white;
+  background-color: gray;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.4s;
+  cursor: pointer;
+  :hover {
+    background-color: #cc5757;
   }
 `;

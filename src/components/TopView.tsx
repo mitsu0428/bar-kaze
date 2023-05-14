@@ -73,6 +73,7 @@ const CustomImage = styled(Image)`
   bottom: 0;
   right: 0;
   z-index: -1;
+  border-radius: 8px;
 `;
 
 const CustomImageSp = styled(Image)`
@@ -80,6 +81,7 @@ const CustomImageSp = styled(Image)`
   top: 0;
   left: 0;
   z-index: -1;
+  border-radius: 8px;
 `;
 
 const CustomSubTitle = styled.h2`
