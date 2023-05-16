@@ -6,9 +6,11 @@ import { useToast } from "@/components/hooks/useToast";
 import router from "next/router";
 
 export default function Mail() {
-  const [name, setName] = React.useState("");
-  const [mail, setMail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [currentValues, setCurentValues] = React.useState({
+    name: "",
+    mail: "",
+    message: "",
+  });
 
   const toast = useToast();
 
@@ -16,7 +18,7 @@ export default function Mail() {
     new Promise((resolve) => setTimeout(resolve, ms));
 
   const sendMail = async () => {
-    if (name == "") {
+    if (currentValues.name == "") {
       toast({
         text: "名前が入力されていません。",
         type: "error",
@@ -25,7 +27,7 @@ export default function Mail() {
       return;
     }
 
-    if (mail == "") {
+    if (currentValues.mail == "") {
       toast({
         text: "メールアドレスが入力されていません。",
         type: "error",
@@ -34,7 +36,7 @@ export default function Mail() {
       return;
     }
 
-    if (mail.indexOf("@") == -1) {
+    if (currentValues.mail.indexOf("@") == -1) {
       toast({
         text: "無効なメールアドレスです。",
         type: "error",
@@ -43,7 +45,7 @@ export default function Mail() {
       return;
     }
 
-    if (message == "") {
+    if (currentValues.message == "") {
       toast({
         text: "内容が入力されていません。",
         type: "error",
@@ -55,9 +57,9 @@ export default function Mail() {
     await fetch("/api/mail", {
       method: "POST",
       body: `\n
-      名前: ${name} \n
-      メールアドレス: ${mail} \n
-      お問い合わせ内容: \n${message} `,
+      名前: ${currentValues.name} \n
+      メールアドレス: ${currentValues.mail} \n
+      お問い合わせ内容: \n${currentValues.message} `,
     });
 
     toast({
@@ -104,20 +106,26 @@ export default function Mail() {
           <BasicInputField
             type="text"
             placeholder="名前"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) =>
+              setCurentValues({ ...currentValues, name: e.target.value })
+            }
           />
         </BasicSubContainer>
         <BasicSubContainer>
           <BasicInputField
             type="text"
             placeholder="メールアドレス"
-            onChange={(e) => setMail(e.target.value)}
+            onChange={(e) => {
+              setCurentValues({ ...currentValues, mail: e.target.value });
+            }}
           />
         </BasicSubContainer>
         <BasicSubContainer>
           <ContactTextArea
             placeholder="お問い合わせ&#13; 例）イベント会場として使用したいです。"
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) => {
+              setCurentValues({ ...currentValues, message: e.target.value });
+            }}
           />
         </BasicSubContainer>
         <BasicSubContainer>
