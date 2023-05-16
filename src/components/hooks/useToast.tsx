@@ -1,6 +1,6 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { createPortal } from "react-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 type ToastTypes = "normal" | "error" | "";
 
@@ -79,6 +79,15 @@ export const ToastProvider = ({ children }: ToastProviderProps) => {
   );
 };
 
+const slideInFromRight = keyframes`
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+`;
+
 const Toast = styled.div<{ visible: boolean; toastType: ToastTypes }>`
   display: ${(p) => (p.visible ? "block" : "none")};
   background-color: ${(p) =>
@@ -90,4 +99,6 @@ const Toast = styled.div<{ visible: boolean; toastType: ToastTypes }>`
   border-radius: 8px;
   padding: 14px 32px 14px 32px;
   z-index: 100;
+
+  animation: 0.5s ${slideInFromRight} ease-out;
 `;

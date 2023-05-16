@@ -18,7 +18,7 @@ export default function Mail() {
   const sendMail = async () => {
     if (name == "") {
       toast({
-        text: "名前を入力してください。",
+        text: "名前が入力されていません。",
         type: "error",
         isDisplay: true,
       });
@@ -27,7 +27,7 @@ export default function Mail() {
 
     if (mail == "") {
       toast({
-        text: "メールアドレスを入力してください。",
+        text: "メールアドレスが入力されていません。",
         type: "error",
         isDisplay: true,
       });
@@ -36,7 +36,7 @@ export default function Mail() {
 
     if (mail.indexOf("@") == -1) {
       toast({
-        text: "有効なメールアドレスを入力してください。",
+        text: "無効なメールアドレスです。",
         type: "error",
         isDisplay: true,
       });
@@ -45,7 +45,7 @@ export default function Mail() {
 
     if (message == "") {
       toast({
-        text: "内容を入力してください。",
+        text: "内容が入力されていません。",
         type: "error",
         isDisplay: true,
       });
