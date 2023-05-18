@@ -51,7 +51,6 @@ const Container = styled.div<{ isPc: boolean }>`
   ${(props) => !props.isPc && "height: 50vh;"}
   position: relative;
   padding: 32px;
-  margin-top: 64px;
 `;
 
 const CustomTextArea = styled.div`
