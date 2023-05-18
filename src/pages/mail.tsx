@@ -133,12 +133,12 @@ export default function Mail() {
             送信
           </BasicButton>
         </BasicSubContainer>
-        <BasicText>
-          <BasicButton>
-            <Link href={"/"}>公式サイトに戻る</Link>
-          </BasicButton>
-        </BasicText>
       </ContactContainer>
+      <BasicText>
+        <BasicButton>
+          <Link href={"/"}>公式サイトに戻る</Link>
+        </BasicButton>
+      </BasicText>
     </BasicContainer>
   );
 }
