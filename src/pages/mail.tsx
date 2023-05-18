@@ -96,11 +96,6 @@ export default function Mail() {
       <ContactContainer>
         <BasicSubContainer>
           <ContactSubTitle>お問い合わせ</ContactSubTitle>
-          <BasicText>
-            <BasicButton>
-              <Link href={"/"}>公式サイトに戻る</Link>
-            </BasicButton>
-          </BasicText>
         </BasicSubContainer>
         <BasicSubContainer>
           <BasicInputField
@@ -138,6 +133,11 @@ export default function Mail() {
             送信
           </BasicButton>
         </BasicSubContainer>
+        <BasicText>
+          <BasicButton>
+            <Link href={"/"}>公式サイトに戻る</Link>
+          </BasicButton>
+        </BasicText>
       </ContactContainer>
     </BasicContainer>
   );
