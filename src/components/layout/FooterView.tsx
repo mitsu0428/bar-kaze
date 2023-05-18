@@ -28,7 +28,7 @@ const Container = styled.div`
 
 const CustomFooter = styled.footer`
   width: 100%;
-  background-color: #191919;
+  background-color: #101010;
   color: #fff;
   text-align: center;
   font-size: 32px;
