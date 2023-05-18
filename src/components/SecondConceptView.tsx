@@ -30,8 +30,7 @@ const Container = styled.div<{ isPc: boolean }>`
 
   ${(props) => props.isPc && "height: 100vh;"}
   ${(props) => props.isPc && "margin-top: 128px;"}
-  ${(props) => !props.isPc && "height: 80vh;"}
-  ${(props) => !props.isPc && "margin-top: 64px;"}
+  ${(props) => !props.isPc && "height: 50vh;"}
 `;
 
 const CustomText = styled.p`
