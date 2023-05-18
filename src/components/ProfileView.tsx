@@ -42,6 +42,7 @@ const CustomImage = styled(Image)`
   border-radius: 50%;
   margin: 0 20px;
   margin-top: 16px;
+  pointer-events: none;
 `;
 
 const CustomText = styled.p`
