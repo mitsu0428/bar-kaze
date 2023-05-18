@@ -120,6 +120,7 @@ const BasicButton = styled.button`
   height: 3rem;
   padding: 0.5rem 1.5rem;
   margin: 1rem 0;
+  margin-top: 64px;
   margin-left: 64px;
   text-decoration: none;
   color: white;
