@@ -14,9 +14,6 @@ export default function Mail() {
 
   const toast = useToast();
 
-  const _sleep = (ms: number) =>
-    new Promise((resolve) => setTimeout(resolve, ms));
-
   const sendMail = async () => {
     if (currentValues.name == "") {
       toast({
@@ -53,7 +50,7 @@ export default function Mail() {
       });
       return;
     }
-    await _sleep(1000);
+
     await fetch("/api/mail", {
       method: "POST",
       body: `\n
