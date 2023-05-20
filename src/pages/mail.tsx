@@ -62,6 +62,7 @@ export default function Mail() {
       お問い合わせ内容: \n${currentValues.message} `,
     });
 
+    setCurentValues({ name: "", mail: "", message: "" });
     toast({
       text: "メッセージを送信しました。",
       type: "normal",
