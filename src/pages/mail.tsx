@@ -102,16 +102,18 @@ export default function Mail() {
           <BasicInputField
             type="text"
             placeholder="名前"
-            onChange={(e) =>
-              setCurentValues({ ...currentValues, name: e.target.value })
-            }
+            value={currentValues.name ?? ""}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setCurentValues({ ...currentValues, name: e.target.value });
+            }}
           />
         </BasicSubContainer>
         <BasicSubContainer>
           <BasicInputField
             type="text"
             placeholder="メールアドレス"
-            onChange={(e) => {
+            value={currentValues.mail ?? ""}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setCurentValues({ ...currentValues, mail: e.target.value });
             }}
           />
@@ -119,7 +121,8 @@ export default function Mail() {
         <BasicSubContainer>
           <ContactTextArea
             placeholder="お問い合わせ&#13; 例）イベント会場として使用したいです。"
-            onChange={(e) => {
+            value={currentValues.message ?? ""}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setCurentValues({ ...currentValues, message: e.target.value });
             }}
           />
