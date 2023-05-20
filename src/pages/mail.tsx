@@ -103,7 +103,7 @@ export default function Mail() {
             type="text"
             placeholder="名前"
             value={currentValues.name ?? ""}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: { target: { value: any } }) => {
               setCurentValues({ ...currentValues, name: e.target.value });
             }}
           />
@@ -113,7 +113,7 @@ export default function Mail() {
             type="text"
             placeholder="メールアドレス"
             value={currentValues.mail ?? ""}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: { target: { value: any } }) => {
               setCurentValues({ ...currentValues, mail: e.target.value });
             }}
           />
@@ -122,7 +122,7 @@ export default function Mail() {
           <ContactTextArea
             placeholder="お問い合わせ&#13; 例）イベント会場として使用したいです。"
             value={currentValues.message ?? ""}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            onChange={(e: { target: { value: any } }) => {
               setCurentValues({ ...currentValues, message: e.target.value });
             }}
           />
