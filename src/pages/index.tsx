@@ -35,8 +35,8 @@ export default function Home() {
       <SecondConceptView isPc={isPc} />
       <ThirdView isPc={isPc} />
       <InstagramView isPc={isPc} />
-      <InformationView isPc={isPc} />
       <ProfileView isPc={isPc} />
+      <InformationView isPc={isPc} />
       <FooterView isPc={isPc} />
     </Main>
   );
