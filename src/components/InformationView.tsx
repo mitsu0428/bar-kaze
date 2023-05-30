@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -10,6 +11,12 @@ function InformationView({ isPc }: Props) {
     <Container isPc={isPc}>
       {isPc ? (
         <>
+          <StyledImage
+            src="/images/map/bar-kaze-map.png"
+            alt="bar kaze までの道のり画像"
+            width={isPc ? 600 : 300}
+            height={isPc ? 600 : 300}
+          />
           <CustomText>OPEN 20:00 - 5:00</CustomText>
           <CustomText>東京メトロ渋谷駅 A2出口 徒歩5分</CustomText>
         </>
@@ -46,4 +53,8 @@ const CustomText = styled.p`
   @media (max-width: 768px) {
     font-size: 16px;
   }
+`;
+
+const StyledImage = styled(Image)`
+  border-radius: 8px;
 `;
