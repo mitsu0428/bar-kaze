@@ -21,44 +21,56 @@ function InstagramView({ isPc }: Props) {
         </Link>
       </CustomText>
       <Hr />
-      <ImageMatrix>
-        <CustomImage
-          src="/images/Instagram/IMG_6474.jpg"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-        <CustomImage
-          src="/images/Instagram/IMG_6475.jpg"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-        <CustomImage
-          src="/images/Instagram/IMG_6476.jpg"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-        <CustomImage
-          src="/images/Instagram/IMG_6477.jpg"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-        <CustomImage
-          src="/images/Instagram/IMG_6564.JPG"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-        <CustomImage
-          src="/images/Instagram/IMG_6565.JPG"
-          alt="instagram"
-          width={isPc ? 350 : 175}
-          height={isPc ? 350 : 175}
-        />
-      </ImageMatrix>
+      <ImageSlider>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6474.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6475.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6476.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6477.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6564.JPG"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/IMG_6565.JPG"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+      </ImageSlider>
     </Container>
   );
 }
@@ -90,21 +102,29 @@ const CustomSubTitle = styled.h2`
   }
 `;
 
-const ImageMatrix = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+const ImageSlider = styled.div`
   width: 100%;
-  height: 100%;
-  padding: 32px;
-  @media (max-width: 768px) {
-    flex-direction: column;
+  overflow-x: auto;
+  flex: 1;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
+`;
+
+const Slide = styled.div`
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-right: 16px;
 `;
 
 const CustomImage = styled(Image)`
   margin-top: 16px;
+  border-radius: 8px;
 `;
 
 const CustomText = styled.p`
