@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { useToast } from "@/components/hooks/useToast";
 import router from "next/router";
+import SeoSettings from "@/components/libs/SeoSettings";
 
 export default function Mail() {
   const [currentValues, setCurentValues] = React.useState({
@@ -91,6 +92,16 @@ export default function Mail() {
 
   return (
     <BasicContainer>
+      <SeoSettings
+        pageTitle={"お問い合わせ | bar kaze -円山町 | bar kaze maruyamacho"}
+        pageDescription={
+          "イベント会場として利用したいや貸し切りのお問い合わせなど。正統派ウイスキーから個性的なカクテルと共に空間を利用しませんか。"
+        }
+        pagePath={"https://bar-kaze.net/mail"}
+        pageImg={"https://bar-kaze.net/mail"}
+        pageImgWidth={1280}
+        pageImgHeight={960}
+      />
       <ContactContainer>
         <BasicSubContainer>
           <ContactSubTitle>お問い合わせ</ContactSubTitle>

@@ -23,7 +23,7 @@ export default function Home() {
       <SeoSettings
         pageTitle={"bar kaze -円山町 | bar kaze maruyamacho"}
         pageDescription={
-          "【渋谷駅から徒歩5分】円山町エリアにあるbar kazeの公式サイト。正統派ウイスキーから個性的なカクテルまでその時の気分に応じたお酒を楽しめます。"
+          "【渋谷駅から徒歩5分】円山町エリアにある「bar kaze -円山町」の公式サイト。正統派ウイスキーから個性的なカクテルまでその時の気分に応じたお酒を楽しめます。"
         }
         pagePath={"https://bar-kaze.net"}
         pageImg={"https://bar-kaze.net"}
