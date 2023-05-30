@@ -44,4 +44,5 @@ export default function Home() {
 
 const Main = styled.main`
   color: #f5f5f5;
+  padding: 8px;
 `;
