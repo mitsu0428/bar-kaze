@@ -24,7 +24,31 @@ function InstagramView({ isPc }: Props) {
       <ImageSlider>
         <Slide>
           <CustomImage
+            src="/images/Instagram/1.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/2.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
             src="/images/Instagram/IMG_6474.jpg"
+            alt="instagram"
+            width={isPc ? 350 : 175}
+            height={isPc ? 350 : 175}
+          />
+        </Slide>
+        <Slide>
+          <CustomImage
+            src="/images/Instagram/3.jpg"
             alt="instagram"
             width={isPc ? 350 : 175}
             height={isPc ? 350 : 175}
@@ -40,7 +64,7 @@ function InstagramView({ isPc }: Props) {
         </Slide>
         <Slide>
           <CustomImage
-            src="/images/Instagram/IMG_6476.jpg"
+            src="/images/Instagram/IMG_6564.JPG"
             alt="instagram"
             width={isPc ? 350 : 175}
             height={isPc ? 350 : 175}
@@ -49,14 +73,6 @@ function InstagramView({ isPc }: Props) {
         <Slide>
           <CustomImage
             src="/images/Instagram/IMG_6477.jpg"
-            alt="instagram"
-            width={isPc ? 350 : 175}
-            height={isPc ? 350 : 175}
-          />
-        </Slide>
-        <Slide>
-          <CustomImage
-            src="/images/Instagram/IMG_6564.JPG"
             alt="instagram"
             width={isPc ? 350 : 175}
             height={isPc ? 350 : 175}
