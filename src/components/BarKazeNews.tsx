@@ -5,7 +5,7 @@ type Props = {
   isPc: boolean;
 };
 
-const ShopNews = ({ isPc }: Props) => {
+const BarKazeNews = ({ isPc }: Props) => {
   return (
     <Container isPc={isPc}>
       <CustomSubTitle>News</CustomSubTitle>
@@ -23,7 +23,7 @@ const ShopNews = ({ isPc }: Props) => {
   );
 };
 
-export default ShopNews;
+export default BarKazeNews;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
