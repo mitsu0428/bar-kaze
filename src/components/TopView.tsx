@@ -10,17 +10,34 @@ function TopView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
       <CustomTextArea isPc={isPc}>
-        <CustomSubTitle isPc={isPc}>bar</CustomSubTitle>
-        <CustomSubTitle isPc={isPc}>kaze</CustomSubTitle>
+        <CustomSubTitle isPc={isPc}>bar kaze</CustomSubTitle>
         <CustomSubTitle isPc={isPc}>Maruyamacho</CustomSubTitle>
       </CustomTextArea>
-      <CustomImage
-        src="/images/first_view.jpg"
-        alt="top view"
-        width={isPc ? 1200 : 360}
-        height={isPc ? 750 : 225}
-        isPc={isPc}
-      />
+      <SlideShow>
+        {/* 画像を追加 */}
+        <CustomImage
+          src="/images/first_view.jpg"
+          alt="top view"
+          width={isPc ? 1200 : 360}
+          height={isPc ? 750 : 225}
+          isPc={isPc}
+          isFirst // 最初の画像を示すフラグを追加
+        />
+        <CustomImage
+          src="/images/second_view.jpg"
+          alt="top view"
+          width={isPc ? 1200 : 360}
+          height={isPc ? 750 : 225}
+          isPc={isPc}
+        />
+        <CustomImage
+          src="/images/third_view.jpg"
+          alt="top view"
+          width={isPc ? 1200 : 360}
+          height={isPc ? 750 : 225}
+          isPc={isPc}
+        />
+      </SlideShow>
     </Container>
   );
 }
@@ -32,21 +49,86 @@ const Container = styled.div<{ isPc: boolean }>`
   height: ${(props) => (props.isPc ? "100vh" : "50vh")};
   display: flex;
   position: relative;
-  padding: 32px;
+  flex-direction: column;
+  padding: 16px;
+  overflow: hidden; /* スライドショー領域をはみ出た部分を隠す */
 `;
 
-const CustomImage = styled(Image)<ImageProps & { isPc: boolean }>`
+const SlideShow = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+`;
+
+const CustomImage = styled(Image)<
+  ImageProps & { isPc: boolean; isFirst?: boolean }
+>`
   position: absolute;
-  ${(props) => (props.isPc ? "bottom: 0; right: 0;" : "top: 0; left: 0;")}
+  top: 0;
+  right: 0;
   z-index: -1;
-  border-radius: 8px;
+  border-radius: 16px;
+  opacity: 0;
+  animation: ${(props) => (props.isFirst ? "slideShowFirst" : "slideShow")} 20s
+    infinite;
+
+  /* 最初の画像のアニメーション */
+  @keyframes slideShowFirst {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    25% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    75% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  /* 2番目以降の画像のアニメーション */
+  @keyframes slideShow {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    25% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    75% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
 `;
 
 const CustomTextArea = styled.div<{ isPc: boolean }>`
   position: absolute;
-  top: ${(props) => (props.isPc ? "50%" : "25%")};
-  left: ${(props) => (props.isPc ? "30%" : "50%")};
-  transform: translate(-50%, -50%);
+  top: 32px;
+  left: 32px;
+  z-index: 1;
+  width: ${(props) => (props.isPc ? "100%" : "100%")};
+  height: ${(props) => (props.isPc ? "100%" : "100%")};
 `;
 
 const CustomSubTitle = styled.h2<{ isPc: boolean }>`
