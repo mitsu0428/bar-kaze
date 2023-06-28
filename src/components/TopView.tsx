@@ -124,7 +124,7 @@ const CustomImage = styled(Image)<
 
 const CustomTextArea = styled.div<{ isPc: boolean }>`
   position: absolute;
-  top: 32px;
+  top: 128px;
   left: 32px;
   z-index: 1;
   width: ${(props) => (props.isPc ? "100%" : "100%")};

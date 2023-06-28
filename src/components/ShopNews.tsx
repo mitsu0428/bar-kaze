@@ -5,19 +5,23 @@ type Props = {
   isPc: boolean;
 };
 
-function ShopNews({ isPc }: Props) {
+const ShopNews = ({ isPc }: Props) => {
   return (
     <Container isPc={isPc}>
       <CustomSubTitle>News</CustomSubTitle>
       <SubContainer>
         <CustomText>2023.04.25</CustomText>
         <CustomTextMin>POP UP Vintage & Archives EVENT</CustomTextMin>
+        <CustomText>2023.06.21</CustomText>
+        <CustomTextMin>
+          Bar kaze -円山町がInstagramでタグ付けられるようになりました。
+        </CustomTextMin>
         <CustomText>2023.07.06 ~ 07.08</CustomText>
         <CustomTextMin>1ST ANNIVERSARY EVENT</CustomTextMin>
       </SubContainer>
     </Container>
   );
-}
+};
 
 export default ShopNews;
 
