@@ -9,6 +9,7 @@ import SecondView from "@/components/SecondView";
 import ThirdView from "@/components/ThirdView";
 import TopView from "@/components/TopView";
 import SeoSettings from "@/components/libs/SeoSettings";
+import ShopNews from "@/components/shopNews";
 
 export default function Home() {
   const [isPc, setIsPc] = React.useState(false);
@@ -31,6 +32,7 @@ export default function Home() {
         pageImgHeight={960}
       />
       <TopView isPc={isPc} />
+      <ShopNews isPc={isPc} />
       <SecondView isPc={isPc} />
       <SecondConceptView isPc={isPc} />
       <ThirdView isPc={isPc} />
