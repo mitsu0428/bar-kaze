@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import styled from "styled-components";
 
 type Props = {
@@ -9,36 +9,18 @@ type Props = {
 function TopView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
-      {isPc && (
-        <CustomTextArea>
-          <CustomSubTitle>bar</CustomSubTitle>
-          <CustomSubTitle>kaze</CustomSubTitle>
-          <CustomSubTitle>Maruyamacho</CustomSubTitle>
-        </CustomTextArea>
-      )}
-      {!isPc && (
-        <CustomTextAreaSp>
-          <CustomSubTitleSp>bar</CustomSubTitleSp>
-          <CustomSubTitleSp>kaze</CustomSubTitleSp>
-          <CustomSubTitleSp>Maruyamacho</CustomSubTitleSp>
-        </CustomTextAreaSp>
-      )}
-      {isPc && (
-        <CustomImage
-          src="/images/first_view.jpg"
-          alt="top view"
-          width={1200}
-          height={750}
-        />
-      )}
-      {!isPc && (
-        <CustomImageSp
-          src="/images/first_view.jpg"
-          alt="top view"
-          width={360}
-          height={225}
-        />
-      )}
+      <CustomTextArea isPc={isPc}>
+        <CustomSubTitle isPc={isPc}>bar</CustomSubTitle>
+        <CustomSubTitle isPc={isPc}>kaze</CustomSubTitle>
+        <CustomSubTitle isPc={isPc}>Maruyamacho</CustomSubTitle>
+      </CustomTextArea>
+      <CustomImage
+        src="/images/first_view.jpg"
+        alt="top view"
+        width={isPc ? 1200 : 360}
+        height={isPc ? 750 : 225}
+        isPc={isPc}
+      />
     </Container>
   );
 }
@@ -47,48 +29,28 @@ export default TopView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
+  height: ${(props) => (props.isPc ? "100vh" : "50vh")};
+  display: flex;
   position: relative;
   padding: 32px;
 `;
 
-const CustomTextArea = styled.div`
+const CustomImage = styled(Image)<ImageProps & { isPc: boolean }>`
   position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-`;
-
-const CustomTextAreaSp = styled.div`
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-const CustomImage = styled(Image)`
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  ${(props) => (props.isPc ? "bottom: 0; right: 0;" : "top: 0; left: 0;")}
   z-index: -1;
   border-radius: 8px;
 `;
 
-const CustomImageSp = styled(Image)`
+const CustomTextArea = styled.div<{ isPc: boolean }>`
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  border-radius: 8px;
+  top: ${(props) => (props.isPc ? "50%" : "25%")};
+  left: ${(props) => (props.isPc ? "30%" : "50%")};
+  transform: translate(-50%, -50%);
 `;
 
-const CustomSubTitle = styled.h2`
-  font-size: 100px;
-  color: #f5f5f5;
-`;
-
-const CustomSubTitleSp = styled.h2`
-  font-size: 36px;
+const CustomSubTitle = styled.h2<{ isPc: boolean }>`
+  font-size: ${(props) => (props.isPc ? "100px" : "36px")};
+  font-weight: 700;
   color: #f5f5f5;
 `;
