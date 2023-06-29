@@ -8,11 +8,14 @@ type Props = {
 function SecondConceptView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
-      <CustomText>外にいる時にふと感じる心地よい風</CustomText>
-      <CustomText>生活していると、追い風が吹くこともあれば</CustomText>
-      <CustomText>向かい風が吹くこともある</CustomText>
-      <CustomText>でも絶対に心地良い風が吹く瞬間はある</CustomText>
-      <CustomText>そんな瞬間がずっと続くように。</CustomText>
+      <SubContainer isPc={isPc}>
+        {" "}
+        <CustomText>外にいる時にふと感じる心地よい風</CustomText>
+        <CustomText>生活していると、追い風が吹くこともあれば</CustomText>
+        <CustomText>向かい風が吹くこともある</CustomText>
+        <CustomText>でも絶対に心地良い風が吹く瞬間はある</CustomText>
+        <CustomText>そんな瞬間がずっと続くように。</CustomText>
+      </SubContainer>
     </Container>
   );
 }
@@ -25,12 +28,17 @@ const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
   text-align: right;
 
-  ${(props) => props.isPc && "height: 100vh;"}
-  ${(props) => props.isPc && "margin-top: 128px;"}
-  ${(props) => !props.isPc && "height: 50vh;"}
+  ${(props) => props.isPc && "height: 70vh;"}
+  ${(props) => !props.isPc && "height: 40vh;"}
+`;
+
+const SubContainer = styled.div<{ isPc: boolean }>`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  ${(props) => props.isPc && "top: 25%;"}
 `;
 
 const CustomText = styled.p`
