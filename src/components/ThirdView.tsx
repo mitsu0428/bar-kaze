@@ -89,6 +89,7 @@ const CustomImageSp = styled(Image)`
 `;
 
 const CustomSubTitle = styled.h2`
+  position: relative;
   font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;

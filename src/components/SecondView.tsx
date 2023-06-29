@@ -9,6 +9,7 @@ type Props = {
 function SecondView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
+      {isPc && <VerticalText>Concepts</VerticalText>}
       {isPc && (
         <CustomImage
           src="/images/second_view.jpg"
@@ -17,7 +18,7 @@ function SecondView({ isPc }: Props) {
           height={750}
         />
       )}
-      {isPc && <VerticalText>Concepts</VerticalText>}
+      {!isPc && <CustomSubTitle>Concepts</CustomSubTitle>}
       {!isPc && (
         <CustomImageSp
           src="/images/second_view.jpg"
@@ -26,7 +27,6 @@ function SecondView({ isPc }: Props) {
           height={225}
         />
       )}
-      {!isPc && <CustomSubTitle>Concepts</CustomSubTitle>}
     </Container>
   );
 }
@@ -51,7 +51,7 @@ const CustomImage = styled(Image)`
 `;
 
 const CustomImageSp = styled(Image)`
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: -1;
@@ -59,6 +59,7 @@ const CustomImageSp = styled(Image)`
 `;
 
 const CustomSubTitle = styled.h2`
+  position: relative;
   font-size: 80px;
   color: transparent;
   -webkit-text-stroke: 2px #f5f5f5;
