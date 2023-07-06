@@ -17,8 +17,10 @@ function InformationView({ isPc }: Props) {
             width={isPc ? 450 : 250}
             height={isPc ? 450 : 250}
           />
-          <CustomText>OPEN 20:00 - 5:00</CustomText>
-          <CustomText>東京メトロ渋谷駅 A2出口 徒歩5分</CustomText>
+          <TextWrap>
+            <CustomText>OPEN 20:00 - 5:00</CustomText>
+            <CustomText>TEL: 03-6416-3943</CustomText>
+          </TextWrap>
         </>
       ) : (
         <>
@@ -28,8 +30,10 @@ function InformationView({ isPc }: Props) {
             width={isPc ? 450 : 250}
             height={isPc ? 450 : 250}
           />
-          <CustomText>OPEN 20:00 - 5:00</CustomText>
-          <CustomText>東京メトロ渋谷駅 A2出口 徒歩5分</CustomText>
+          <TextWrap>
+            <CustomText>OPEN 20:00 - 5:00</CustomText>
+            <CustomText>TEL: 03-6416-3943</CustomText>
+          </TextWrap>
         </>
       )}
     </Container>
@@ -42,8 +46,10 @@ const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  ${(props) => props.isPc && "flex-direction: row;"}
+  ${(props) => !props.isPc && "flex-direction: column;"}
+  ${(props) => props.isPc && "justify-content: space-around;"}
+  ${(props) => !props.isPc && "justify-content: center;"}
   align-items: center;
   text-align: center;
   ${(props) => props.isPc && "height: 100vh;"}
@@ -53,12 +59,19 @@ const Container = styled.div<{ isPc: boolean }>`
 `;
 
 const CustomText = styled.p`
-  font-size: 32px;
+  font-size: 28px;
   text-align: left;
 
   @media (max-width: 768px) {
     font-size: 16px;
   }
+`;
+
+const TextWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledImage = styled(Image)`
