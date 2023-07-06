@@ -9,7 +9,6 @@ function SecondConceptView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
       <SubContainer isPc={isPc}>
-        {" "}
         <CustomText>外にいる時にふと感じる心地よい風</CustomText>
         <CustomText>生活していると、追い風が吹くこともあれば</CustomText>
         <CustomText>向かい風が吹くこともある</CustomText>

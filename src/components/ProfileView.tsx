@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import StyledBr from "./ui/StyledBr";
 
 type Props = {
   isPc: boolean;
@@ -16,8 +17,14 @@ function ProfileView({ isPc }: Props) {
         height={isPc ? 300 : 150}
       />
       <CustomText>〒150-0044</CustomText>
+      <StyledBr />
       <CustomText>東京都渋谷区円山町1-3 SKビル 4F</CustomText>
-      <CustomText>TEL: 03-6416-3943</CustomText>
+      <CustomText>
+        SK Building 4F, 1-3 Maruyamacho, Shibuya-ku, Tokyo
+      </CustomText>
+      <StyledBr />
+      <CustomText>東京メトロ 渋谷駅 A2出口 徒歩5分</CustomText>
+      <CustomText>Tokyo Metro Shibuya Station, Exit A2, 5 min. walk</CustomText>
     </Container>
   );
 }
@@ -46,8 +53,8 @@ const CustomImage = styled(Image)`
 `;
 
 const CustomText = styled.p`
-  font-size: 32px;
-  text-align: cemter;
+  font-size: 28px;
+  text-align: center;
 
   @media (max-width: 768px) {
     font-size: 16px;
