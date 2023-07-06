@@ -61,7 +61,7 @@ const Container = styled.div<{ isPc: boolean }>`
 const CustomText = styled.p`
   font-size: 24px;
   text-align: left;
-
+  margin-top: 16px;
   @media (max-width: 768px) {
     font-size: 14px;
   }
