@@ -10,34 +10,66 @@ function TopView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
       <CustomTextArea isPc={isPc}>
-        <CustomSubTitle isPc={isPc}>bar kaze</CustomSubTitle>
-        <CustomSubTitle isPc={isPc}>Maruyamacho</CustomSubTitle>
+        {isPc ? (
+          <>
+            <CustomSubTitle isPc={isPc}>bar kaze</CustomSubTitle>
+            <CustomSubTitle isPc={isPc}>Maruyamacho</CustomSubTitle>
+          </>
+        ) : (
+          <SPWrapper>
+            <SPSubtitle isPc={isPc}>bar kaze</SPSubtitle>
+            <SPSubtitle isPc={isPc}>Maruyamacho</SPSubtitle>
+          </SPWrapper>
+        )}
       </CustomTextArea>
-      <SlideShow>
-        {/* 画像を追加 */}
-        <CustomImage
-          src="/images/first_view.jpg"
-          alt="top view"
-          width={isPc ? 1200 : 360}
-          height={isPc ? 750 : 225}
-          isPc={isPc}
-          isFirst // 最初の画像を示すフラグを追加
-        />
-        <CustomImage
-          src="/images/second_view.jpg"
-          alt="top view"
-          width={isPc ? 1200 : 360}
-          height={isPc ? 750 : 225}
-          isPc={isPc}
-        />
-        <CustomImage
-          src="/images/third_view.jpg"
-          alt="top view"
-          width={isPc ? 1200 : 360}
-          height={isPc ? 750 : 225}
-          isPc={isPc}
-        />
-      </SlideShow>
+      {isPc ? (
+        <SlideShow>
+          {/* 画像を追加 */}
+          <CustomImage
+            src="/images/first_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+            isPc={isPc}
+            isFirst // 最初の画像を示すフラグを追加
+          />
+          <CustomImage
+            src="/images/second_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+            isPc={isPc}
+          />
+          <CustomImage
+            src="/images/third_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+            isPc={isPc}
+          />
+        </SlideShow>
+      ) : (
+        <SPWrapperImage>
+          <Image
+            src="/images/first_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+          />
+          <Image
+            src="/images/second_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+          />
+          <Image
+            src="/images/third_view.jpg"
+            alt="top view"
+            width={isPc ? 1200 : 360}
+            height={isPc ? 750 : 225}
+          />
+        </SPWrapperImage>
+      )}
     </Container>
   );
 }
@@ -46,7 +78,7 @@ export default TopView;
 
 const Container = styled.div<{ isPc: boolean }>`
   width: 100%;
-  height: ${(props) => (props.isPc ? "100vh" : "50vh")};
+  height: ${(props) => (props.isPc ? "100vh" : "100vh")};
   display: flex;
   position: relative;
   flex-direction: column;
@@ -135,4 +167,30 @@ const CustomSubTitle = styled.h2<{ isPc: boolean }>`
   font-size: ${(props) => (props.isPc ? "100px" : "36px")};
   font-weight: 700;
   color: #f5f5f5;
+`;
+
+const SPWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  top: 300px;
+`;
+
+const SPWrapperImage = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+`;
+
+const SPSubtitle = styled.h2<{ isPc: boolean }>`
+  font-size: ${(props) => (props.isPc ? "100px" : "36px")};
+  font-weight: 700;
+  color: #f5f5f5;
+  font-family: "Noto Serif JP", serif;
 `;
