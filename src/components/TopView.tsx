@@ -167,6 +167,7 @@ const CustomSubTitle = styled.h2<{ isPc: boolean }>`
   font-size: ${(props) => (props.isPc ? "100px" : "36px")};
   font-weight: 700;
   color: #f5f5f5;
+  font-family: "Noto Serif JP", serif;
 `;
 
 const SPWrapper = styled.div`
