@@ -26,6 +26,8 @@ const CustomWrap = styled.div`
   padding: 8px;
   position: absolute;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
 
   &:hover {
     cursor: pointer;

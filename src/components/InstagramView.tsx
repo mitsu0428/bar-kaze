@@ -11,15 +11,17 @@ type Props = {
 function InstagramView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
-      <CustomSubTitle>Instagram</CustomSubTitle>
-      <CustomText>
-        <Link
-          href="https://www.instagram.com/barkaze_maruyamacho/"
-          target="_blank"
-        >
-          <FaInstagram size={isPc ? 64 : 32} />
-        </Link>
-      </CustomText>
+      <Wrap>
+        <CustomSubTitle>Instagram</CustomSubTitle>
+        <CustomText>
+          <Link
+            href="https://www.instagram.com/barkaze_maruyamacho/"
+            target="_blank"
+          >
+            <FaInstagram size={isPc ? 64 : 32} />
+          </Link>
+        </CustomText>
+      </Wrap>
       <Hr />
       <ImageSlider>
         <Slide>
@@ -105,6 +107,12 @@ const Container = styled.div<{ isPc: boolean }>`
   @media (max-width: 768px) {
     height: auto;
   }
+`;
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const CustomSubTitle = styled.h2`
