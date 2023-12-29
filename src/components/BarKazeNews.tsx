@@ -50,6 +50,7 @@ const CustomSubTitle = styled.h2`
 
   @media (max-width: 768px) {
     font-size: 36px;
+    margin-left: 8px;
   }
 `;
 

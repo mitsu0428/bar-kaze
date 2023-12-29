@@ -42,12 +42,12 @@ const SubContainer = styled.div<{ isPc: boolean }>`
 
 const CustomText = styled.p`
   font-size: 32px;
-  text-align: right;
-  margin-right: 32px;
+  text-align: left;
+  margin-left: 64px;
   padding: 8px;
 
   @media (max-width: 768px) {
     font-size: 16px;
-    margin-right: 16px;
+    margin-left: 16px;
   }
 `;
