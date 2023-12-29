@@ -1,6 +1,7 @@
 import React from "react";
 import Image, { ImageProps } from "next/image";
 import styled from "styled-components";
+import * as InformationIcon from "@/components/ui/InformationWrap";
 
 type Props = {
   isPc: boolean;
@@ -9,6 +10,7 @@ type Props = {
 function TopView({ isPc }: Props) {
   return (
     <Container isPc={isPc}>
+      <InformationIcon.Components />
       <CustomTextArea isPc={isPc}>
         {isPc ? (
           <>
