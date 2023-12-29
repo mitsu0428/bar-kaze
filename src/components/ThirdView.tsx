@@ -23,7 +23,7 @@ function ThirdView({ isPc }: Props) {
           <CustomText>イベント等を行っていただくことも可能です。</CustomText>
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
           <Link href="/mail">
-            <BasicButton>お問い合わせはこちら</BasicButton>
+            <BasicButton>お問い合わせ</BasicButton>
           </Link>
         </CustomImageContainer>
       )}
@@ -40,7 +40,7 @@ function ThirdView({ isPc }: Props) {
           <CustomText>メールまたはDMにてご相談ください。</CustomText>
 
           <Link href="/mail">
-            <BasicButton>お問い合わせはこちら</BasicButton>
+            <BasicButton>お問い合わせ</BasicButton>
           </Link>
         </CustomImageContainerSp>
       )}
@@ -117,7 +117,7 @@ const CustomText = styled.p`
 const BasicButton = styled.button`
   display: inline-block;
   width: 100%;
-  max-width: 350px;
+  max-width: 200px;
   height: 3rem;
   padding: 0.5rem 1.5rem;
   margin: 1rem 0;
@@ -125,7 +125,7 @@ const BasicButton = styled.button`
   margin-left: 64px;
   text-decoration: none;
   color: white;
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.4);
   border: none;
   border-radius: 0.5rem;
   transition: 0.4s;
